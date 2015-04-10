@@ -1,0 +1,12 @@
+{
+    "minimum-stability": "dev",
+    "require": {
+        "gocardless/pro-client-php": "0.0.1"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/gocardless/pro-client-php.git"
+        }
+    ]
+}
