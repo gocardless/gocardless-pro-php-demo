@@ -11,6 +11,21 @@ try {
       exit();
   }
 
+  if (isset($_POST['action']) && $_POST['action'] === 'create_mandate') {
+      $account = $gc->client->customer_bank_accounts()->list();
+      if (count($account) == 0) {
+        $why = 'No bank account found!';
+        include '../partials/error.php';
+        exit();
+      }
+      $gc->client->mandates()->create(array(
+          'links' => array(
+              'creditor' => $_POST['cid'],
+              'customer_bank_account' => $account[0]->id()
+          )
+      )); 
+  }
+
   $customer = $gc->getCustomer($_GET['cid']);
 
   $mandates = $gc->getCustomerMandates($customer->id());
@@ -32,23 +47,9 @@ try {
 }
 
 ?>
-<style>
-.n {
-    background: #f5d5d7;
-}
-.y {
-    background: lightgreen;
-}
-big button {
-    font-size: 20px;
-}
-form {
-    display:inline;
-}
-</style>
-  <h2>Welcome <?= $gc->listUsers()[0]->givenName(); ?>:</h2>
+  <h2>Welcome <?= $gc->listUsers()[0]->given_name(); ?>:</h2>
 
-  <p>You are charging <?= $customer->givenName() ?> <?= $customer->familyName() ?> 5£:</p>
+  <p>You are charging <?= $customer->given_name() ?> <?= $customer->family_name() ?> 5£:</p>
   
     <big>
       <form method="post" action="">
@@ -57,7 +58,7 @@ form {
             <input value="<?= $mandate->id() ?>" type="hidden" name="mid" />
             <button class="button-xlarge pure-button" name="really" value="go"><b>yes</b>, i meant this</button>
         <?php else: ?>
-            <button class="button-large pure-button">create authorisation</button>
+            <button class="button-large pure-button" name="action" value="create_mandate">create authorisation</button>
         <?php endif; ?>
       </form>
       | 
@@ -65,6 +66,12 @@ form {
         <button class="button-large pure-button">nope, i didn't</button>
       </form>
     </big>
+
+    <div style="margin-top:30px">
+      <?php if (isset($mandate)): ?>
+        <div><a href="mandatepdf.php?mid=<?= $mandate->id(); ?>">view mandate</a></div>
+      <?php endif; ?>
+    </div>
 
     <?php require '../partials/recent_payments.php'; ?>
 <?php $gc->footer(); ?>

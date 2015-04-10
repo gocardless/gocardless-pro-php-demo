@@ -4,7 +4,7 @@ require('../gocardless.php');
 $gc = new GoCardlessAPI();
 
 $payment = $gc->client->payments()->get($_GET['pid']);
-$creditor = $gc->client->creditors()->get($payment->links()->creditor);
+$creditor = $gc->client->creditors()->get($payment->links()->creditor());
 
 $gc->header();
 

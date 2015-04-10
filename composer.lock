@@ -1,0 +1,77 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "2a4ac5c4ef8b0f18711a68eeb876d90b",
+    "packages": [
+        {
+            "name": "gocardless/pro-client-php",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:gocardless/pro-client-php.git",
+                "reference": "fedc665a9715a14c45e17e4c0cb07f771276b9e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gocardless/pro-client-php/zipball/fedc665a9715a14c45e17e4c0cb07f771276b9e3",
+                "reference": "fedc665a9715a14c45e17e4c0cb07f771276b9e3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.2.0"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "2.*",
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6.1",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GoCardless\\": "lib/GoCardless"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "GoCardless\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "GoCardless and contributors",
+                    "homepage": "https://github.com/gocardless/pro-client-php/contributors"
+                }
+            ],
+            "description": "GoCardless Pro PHP Client Library",
+            "homepage": "https://gocardless.com/",
+            "keywords": [
+                "api",
+                "direct debit",
+                "gocardless"
+            ],
+            "support": {
+                "source": "https://github.com/gocardless/pro-client-php/tree/0.0.1",
+                "issues": "https://github.com/gocardless/pro-client-php/issues"
+            },
+            "time": "2015-04-10 13:25:06"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

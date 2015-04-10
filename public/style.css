@@ -1,3 +1,19 @@
+.n {
+    background: #f5d5d7;
+}
+.y {
+    background: lightgreen;
+}
+big button {
+    font-size: 20px;
+}
+form {
+    display:inline;
+}
+
+
+
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

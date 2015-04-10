@@ -2,7 +2,7 @@
 <ul>
 <?php foreach ($payments as $payment): ?>
     <li>
-        <?= $payment->currency() === 'GBP' ? '£' : '€' ?><?= intval($payment->amount() / 100) ?> on <?= date('r', strtotime($payment->createdAt())) ?>.
+        <?= $payment->currency() === 'GBP' ? '£' : '€' ?><?= intval($payment->amount() / 100) ?> on <?= date('r', strtotime($payment->created_at())) ?>.
     </li>
 <?php endforeach; ?>
 <?php if (count($payments) == 0): ?>
