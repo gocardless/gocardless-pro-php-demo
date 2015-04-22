@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Welcome {{ userslist[0].given_name() }}:</h2>
+
+<p>You are charging {{ customer.given_name() }} {{ customer.family_name() }} 5£:</p>
+
+<big>
+  <form method="post" action="/charge/create">
+    <input value="{{ customer.id() }}" type="hidden" name="cid" />
+    {% if mandate %}
+        <input value="{{ mandate.id() }}" type="hidden" name="mid" />
+        <button class="button-xlarge pure-button" name="really" value="go"><b>yes</b>, i meant this</button>
+    {% else %}
+        <button class="button-large pure-button" name="action" value="create_mandate">create authorisation</button>
+    {% endif %}
+  </form>
+  | 
+  <form method="get" action="/">
+    <button class="button-large pure-button">nope, i didn't</button>
+  </form>
+</big>
+
+<div style="margin-top:30px">
+  {% if mandate %}
+    <div><a href="/mandate/{{ mandate.id() }}/pdf">view mandate</a></div>
+  {% endif %}
+</div>
+
+
+{% include '_recent_payments.html' %}
+
+{% endblock %}

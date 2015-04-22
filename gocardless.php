@@ -1,14 +1,21 @@
 <?php
 
+if (date_default_timezone_get() == null) {
+  // So default osx install doesn't explode with warnings.
+  date_default_timezone_set('Europe/London');
+}
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 class GoCardlessAPI
 {
 	public function __construct()
 	{
+    $loader = new Twig_Loader_Filesystem(__DIR__ + '/templates');
+    $this->twig = new Twig_Environment($loader);
 		$this->client = new GoCardless\Client(array(
-		  'api_key' => 'AK0000122P7C7N',
-		  'api_secret' => 'y-oZC7lylfpbtisvs19WDmOgsmxUR-mCVkC3CwSD',
+		  'api_key'     => getenv('GC_API_KEY'),
+		  'api_secret'  => getenv('GC_API_SECRET'),
 		  'environment' => \GoCardless\Environment::SANDBOX
 		));
 	}
@@ -63,15 +70,6 @@ class GoCardlessAPI
 	public function listUsers()
 	{
 		return $this->client->users()->list();
-	}
-
-	public function header()
-	{
-		require __DIR__ . '/partials/header.php';
-	}
-	public function footer()
-	{
-		require __DIR__ . '/partials/footer.php';
 	}
 }
 

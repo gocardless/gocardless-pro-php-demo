@@ -1,0 +1,11 @@
+<h3>Recent Payments:</h3>
+<ul>
+{% for payment in payments %}
+    <li>
+        <pre>{{ (payment.currency() == 'GBP') ? '£' : '€' }}{{ payment.amount() // 100 }} on {{ payment.created_at()|date('r') }}</pre>.
+    </li>
+{% endfor %}
+{% if payments|length == 0 %}
+	<h3>No payments found.</h3>
+{% endif %}
+</ul>

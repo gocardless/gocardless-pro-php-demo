@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h3>Welcome {{ users[0].given_name() }}:</h3>
+<div class='pure-menu custom-restricted-width'>
+  <span class="pure-menu-heading">Your connections:</span>
+  <ul class="pure-menu-list">
+  {% for customer in customers %}
+    <li class="pure-menu-item">
+    	<a class="pure-menu-link" href="/customers/{{ customer.id() }}/bill">
+    		{{ customer.given_name()|e }} {{ customer.family_name()|e }} – bill 5£
+    	</a>
+    </li>
+	{% endfor %}
+  </ul>
+</div>
+<div class='pure-menu custom-restricted-width'>
+  <span class="pure-menu-heading">New Clients:</span>
+  <a href="/oneoff" class="pure-button">make a one-off payment</a>
+ </div>
+{% endblock %}

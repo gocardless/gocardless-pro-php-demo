@@ -2,7 +2,7 @@ PORT=8080
 COMPOSER_COMMAND=./composer.phar
 
 server: vendor
-	php -S localhost:$(PORT) -t public/
+	cd public && php -S localhost:$(PORT) routing.php
 
 vendor: composer.phar
 	$(COMPOSER_COMMAND) install
@@ -12,7 +12,7 @@ ifneq (,$(wildcard ./composer.phar))
 	$(info using installed local composer)
 else
 ifneq (,$(shell which composer))
-	ln -s composer.phar $(which composer)
+	ln -s $(shell which composer) composer.phar
 	$(info using local composer)
 else
 	$(info downloading composer)

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form action="/oneoff" method="POST" class="pure-form pure-form-stacked">
+    <fieldset>
+        <legend>Create a redirect flow</legend>
+
+        <label for="description">Description</label>
+        <input id="description" name="description" type="description" placeholder="Description" />
+        <div><br />
+        <button type="submit" class="pure-button pure-button-primary">Create!</button></div>
+    </fieldset>
+</form>
+{% endblock %}

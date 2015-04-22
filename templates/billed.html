@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<huge>£<small>{{ payment.amount() / 100 }}</small></huge>
+
+Your payment to {{ creditor.name() }} for £{{ payment.amount() / 100 }} has been sent :).
+
+{% endblock %}
