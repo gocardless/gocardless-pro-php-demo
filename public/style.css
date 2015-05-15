@@ -10,7 +10,11 @@ big button {
 form {
     display:inline;
 }
-
+huge {
+    font-size: 40em;
+    text-align: center;
+    display: block;
+}
 
 
 
