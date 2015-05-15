@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fe9f09892eda9abdeb58fec127337049",
+    "hash": "57f22609338c5f5327f191c380e9631a",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -63,16 +63,16 @@
         },
         {
             "name": "gocardless/gocardless-pro-php",
-            "version": "0.0.1",
+            "version": "v0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gocardless/gocardless-pro-php.git",
-                "reference": "94ea5826aacf28882b50344abf8b9309b445d1e9"
+                "reference": "3c68dcbe820416d5b0253a014fad14c3ac370183"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gocardless/gocardless-pro-php/zipball/94ea5826aacf28882b50344abf8b9309b445d1e9",
-                "reference": "94ea5826aacf28882b50344abf8b9309b445d1e9",
+                "url": "https://api.github.com/repos/gocardless/gocardless-pro-php/zipball/3c68dcbe820416d5b0253a014fad14c3ac370183",
+                "reference": "3c68dcbe820416d5b0253a014fad14c3ac370183",
                 "shasum": ""
             },
             "require": {
@@ -83,14 +83,14 @@
             },
             "require-dev": {
                 "phpdocumentor/phpdocumentor": "2.*",
-                "phpunit/phpunit": "~4.0",
+                "phpunit/phpunit": "~4.5",
                 "satooshi/php-coveralls": "~0.6.1",
                 "squizlabs/php_codesniffer": "~2.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "GoCardless\\": "lib/GoCardless"
+                    "GoCardlessPro\\": "lib/GoCardlessPro"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -110,7 +110,7 @@
                 "direct debit",
                 "gocardless"
             ],
-            "time": "2015-04-20 14:02:50"
+            "time": "2015-05-11 17:05:09"
         },
         {
             "name": "twig/twig",
@@ -118,12 +118,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "7d5fe0fbd442f6bfc526260eb14ed99ea2a561f5"
+                "reference": "206d54792002375a2d7a76f6988d21a064d133dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/7d5fe0fbd442f6bfc526260eb14ed99ea2a561f5",
-                "reference": "7d5fe0fbd442f6bfc526260eb14ed99ea2a561f5",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/206d54792002375a2d7a76f6988d21a064d133dd",
+                "reference": "206d54792002375a2d7a76f6988d21a064d133dd",
                 "shasum": ""
             },
             "require": {
@@ -167,7 +167,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-04-19 08:35:47"
+            "time": "2015-05-07 15:16:34"
         }
     ],
     "packages-dev": [],
