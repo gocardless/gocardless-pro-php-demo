@@ -34,8 +34,8 @@ $router->map('POST', '/charge/create', function() use ($gc) {
 		header('Location: /customers/' . $_POST['cid'] . '/bill');
 		return;
 	} else if (isset($_POST['cid'])) {
-		$accounts = $gc->client->customer_bank_accounts()->list();
-		$creditors = $gc->client->creditors()->list();
+		$accounts = $gc->client->customer_bank_accounts()->list()->records();
+		$creditors = $gc->client->creditors()->list()->records();
 		if (count($accounts) === 0 || count($creditors) === 0) {
 			throw new Exception('No bank account/creditor found!');
 		}
@@ -53,7 +53,7 @@ $router->map('POST', '/charge/create', function() use ($gc) {
 
 $router->map('GET', '/customers/[a:cid]/bill', function($cid) use ($twig, $gc) {
 	$customer = $gc->getCustomer($cid);
- 	$mandates = $gc->getCustomerMandates($customer->id());
+ 	$mandates = $gc->getCustomerMandates($customer->id())->records();
  	$mandate = null;
  	if (count($mandates) > 0) {
  		$mandate = $mandates[0];
@@ -84,7 +84,7 @@ $router->map('POST', '/oneoff', function() use ($gc) {
 	}
 	$description = $_POST['description'];
 
-	$creditor_id = $gc->client->creditors()->list()[0]->id();
+	$creditor_id = $gc->client->creditors()->list()->records()[0]->id();
 	$uid = uniqid();
 	$flow = $gc->client->redirect_flows()->create(array(
 		'session_token' => $uid,
