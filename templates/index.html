@@ -7,11 +7,11 @@
   <ul class="pure-menu-list">
   {% for customer in customers %}
     <li class="pure-menu-item">
-    	<a class="pure-menu-link" href="/customers/{{ customer.id() }}/bill">
-    		{{ customer.given_name()|e }} {{ customer.family_name()|e }} – bill 5£
-    	</a>
+      <a class="pure-menu-link" href="/customers/{{ customer.id() }}/bill">
+        {{ customer.given_name()|e }} {{ customer.family_name()|e }} – bill 5£
+      </a>
     </li>
-	{% endfor %}
+  {% endfor %}
   </ul>
 </div>
 <div class='pure-menu custom-restricted-width'>
