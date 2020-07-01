@@ -1,7 +1,7 @@
 {
     "minimum-stability": "dev",
     "require": {
-        "gocardless/gocardless-pro-php": "0.0.3",
+        "gocardless/gocardless-pro-php": "4.3.0",
         "twig/twig": "~1.0",
         "altorouter/altorouter": "dev-master"
     }
